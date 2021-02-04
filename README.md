@@ -12,3 +12,5 @@ There are various workarounds to prevent this issue :
 1. Use Enumerable.Empty<T>().ToArray()/ToList() instead of Enumerable.Empty<T>() (to force a type different from EmptyPartition)
 2. Use Enumerable.Empty<T>() + public setters instead of private setters
 3. Put another abstraction layer (a class whose properties are nullable) on it in such ways that this class does not get deserialized directly, but rather created by the abstraction layer
+
+The ideal solution would be option 3 although it may not be possible depending on the place, etc.
