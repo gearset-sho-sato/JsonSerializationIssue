@@ -35,14 +35,16 @@ namespace JsonSerializationIssue.Controllers
 
         // This fails if AffectedItemIdentifiers is something other than null
         [HttpPost("direct")]
-        public void PostProblemKeyDirectly(PostProblemKeyDirectlyRequest request)
+        public PostProblemKeyDirectlyRequest PostProblemKeyDirectly(PostProblemKeyDirectlyRequest request)
         {
+            return request;
         }
 
         // This succeeds no matter what as there is another layer sitting on top to avoid deserialization involving Enumerable.Empty<string>()
         [HttpPost("indirect")]
-        public void PostProblemKeyIndirectly(PostProblemKeyIndirectlyRequest request)
+        public PostProblemKeyIndirectlyRequest PostProblemKeyIndirectly(PostProblemKeyIndirectlyRequest request)
         {
+            return request;
         }
     }
 }
