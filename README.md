@@ -9,7 +9,7 @@ After some investigations, the cause of the issue can/may be attributed to the c
 
 ## Workarounds
 There are various workarounds to prevent this issue :
-1. Use Enumerable.Empty<T>().ToArray()/ToList() instead of Enumerable.Empty<T>() (to force a type different from EmptyPartition)
+1. Use Enumerable.Empty<T>().ToList() instead of Enumerable.Empty<T>() (to force a type different from EmptyPartition)
 2. Use Enumerable.Empty<T>() + public setters instead of private setters
 3. Put another abstraction layer (a class whose properties are nullable) on it in such ways that this class does not get deserialized directly, but rather created by the abstraction layer
 
